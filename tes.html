@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DMCON 2025 – DevOps Conference Kerala</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+   <style>
+    :root {
+      --primary: #48aeed;
+      --secondary: #95d1ef;
+      --accent: #E1E2EF;
+      --dark: #011146;
+      --light: #fff;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background: var(--light);
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: 20px;
+      background: var(--accent);
+      color: #000;
+      font-size: 2rem;
+      font-weight: 600;
+      transition: opacity .3s;
+      margin: 5px;
+      width: 80%;
+      max-width: 250px;
+    }
+    .btn:hover {
+      opacity: 0.85;
+      background: #011146;
+      color: #A5C5E9;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0111465c;
+      backdrop-filter: blur(20px);
+      z-index: 1000;
+    }
+    header nav a {
+      margin-left: 1rem;
+      color: #fff;
+      font-size: 1.2em;
+    }
+    header nav a:hover {
+      color: var(--secondary);
+    }
+    section {
+      padding: 2rem;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      color: #fff;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(3, 19, 37, 0.6);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 2vw, 4rem);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+    .hero-slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      transition: transform 1s ease-in-out;
+    }
+    .hero-slider .slide {
+      min-width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      object-position: center;
+    }
+    .hero-slider .slide {
+      animation: fadeIn 2s ease-in-out;
+    }
+    .circular-counter {
+      background: #011146;
+      opacity: 0.85;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+    }
+    .circular-counter h2 {
+      color: #8100fe;
+      font-family: 'Ubuntu', sans-serif;
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    .circular-counter h6 {
+      font-size: 1rem;
+      margin: 0;
+    }
+    .schedule-at-a-glance {
+      background-color: var(--dark);
+      opacity: 0.85;
+      color: white;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+    .schedule-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .schedule-details {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .schedule-item {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 600px;
+      background-color: white;
+      color: #333;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .schedule-time {
+      font-size: 18px;
+      font-weight: 500;
+      width: 120px;
+    }
+    .schedule-description {
+      font-size: 16px;
+      font-weight: 400;
+      flex-grow: 1;
+    }
+    footer {
+      background: var(--dark);
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .social a {
+      margin: 0 0.5rem;
+      color: #fff;
+      font-size: 1.2rem;
+    }
+    .about-carousel {
+      display: flex;
+      animation: scroll 20s linear infinite;
+    }
+    .about-carousel img {
+      width: 30vw;
+      height: 20vw;
+      border-radius: 2%;
+      object-fit: cover;
+      flex-shrink: 0;
+      margin-right: 1rem;
+    }
+    @media(max-width: 768px) {
+      .btn {
+        width: 80%;
+      }
+      .hero h1 {
+        font-size: 3rem;
+      }
+      .schedule-item {
+        flex-direction: column;
+        align-items: center;
+      }
+      .schedule-time {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header aria-label="Primary">
+    <a href="#hero">
+      <img src="./Assets/Logo/dmcon2025_logo_white2_copy-1.png" alt="DMCON 2025 Logo" style="width: 200px; height: auto;">
+    </a>
+    <nav aria-label="Main Navigation">
+      <a href="./explore.html">Explore Kochi</a>
+      <a href="./cfp.html">CFP</a>
+      <a href="./sponsor.html">Sponsors</a>
+      <a href="./venue">Venue</a>
+      <a href="https://makemypass.com/event/dmcon2025" class="btn" style="width: 8vw; height: auto; font-size: 1rem;">Register</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero" role="banner">
+    <div class="hero-content container">
+      <img src="./Assets/Logo/dmcon2025Xdevops_logo_white_copy.png" style="width: 80%; height: auto; display: block; margin: 0 auto;">
+      <h1>13 September 2025 • Kochi, India</h1>
+      <h1 style="font-size: 50px; font-weight: 400;">#Kerala's Premier DevOps Conference </h1>
+      <a href="https://makemypass.com/event/dmcon2025" class="btn" aria-label="Register for DMCON 2025">REGISTER</a>
+      <a href="./cfp.html" class="btn" aria-label="Sponsors of DMCON 2025">SPONSOR</a>
+      <a href="./cfp.html" class="btn">CFP</a>
+    </div>
+  </section>
+
+  <!-- Countdown Timer Section -->
+  <section id="get-ready" class="get-ready" style="color: #fff; border-radius: 2rem;">
+    <div class="container">
+      <div class="get-started" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2rem;">
+        <div class="circular-counter">
+          <h2 id="days">00</h2>
+          <h6>Days</h6>
+        </div>
+        <div class="circular-counter">
+          <h2 id="hours">00</h2>
+          <h6>Hours</h6>
+        </div>
+        <div class="circular-counter">
+          <h2 id="minutes">00</h2>
+          <h6>Minutes</h6>
+        </div>
+        <div class="circular-counter">
+          <h2 id="seconds">00</h2>
+          <h6>Seconds</h6>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript to handle countdown -->
+  <script>
+    var countDownDate = new Date("September 13, 2025 09:00:00").getTime();
+    var x = setInterval(function () {
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerHTML = days;
+      document.getElementById("hours").innerHTML = hours;
+      document.getElementById("minutes").innerHTML = minutes;
+      document.getElementById("seconds").innerHTML = seconds;
+
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("days").innerHTML = "00";
+        document.getElementById("hours").innerHTML = "00";
+        document.getElementById("minutes").innerHTML = "00";
+        document.getElementById("seconds").innerHTML = "00";
+      }
+    }, 1000);
+  </script>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <p>Join us at DMCON 2025, Kerala’s premier DevOps and cloud-native conference...</p>
+      <blockquote>"Shaping the future of DevOps in India and beyond..."</blockquote>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container">
+      <p class="social" aria-label="Social Links">
+        <a href="https://github.com/devopsmalayalam" aria-label="GitHub">🐙</a>
+        <a href="https://www.linkedin.com/company/devops-malayalam" aria-label="LinkedIn">💼</a>
+        <a href="https://twitter.com/devopsmalayala" aria-label="Twitter">🐦</a>
+      </p>
+      <p>Contact us: <a href="mailto:mod@devopsmalayalam.io">mod@devopsmalayalam.io</a></p>
+      <p>© 2025 DevOps Malayalam • <a href="https://devopsmalayalam.io">devopsmalayalam.io</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>

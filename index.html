@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DMCON 2025 – DevOps Conference Kerala</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+     --primary:#48aeed;
+      --secondary:#95d1ef;
+      --accent:#E1E2EF;
+      --dark: #011146;
+      /* --light:linear-gradient(to right, #011144, #03248c); */
+      --light:#fff
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Poppins',sans-serif;line-height:1.6;color:var(--dark);background:var(--light)}
+    a{color:inherit;text-decoration:none}
+    .btn{display:inline-block;padding:0.75rem 1.5rem;border-radius:20px;background:var(--accent);color:#000;font-size: 2rem; font-weight:600;transition:opacity .3s; margin: 5px; width: 20vw;}
+   .btn:hover{opacity: 0.85; background: #011146; color: #A5C5E9;}
+    header{position:fixed;top:0;left:0;width:100%;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;background:#0111465c;backdrop-filter:blur(20px);z-index:1000}
+    header nav a{margin-left:1rem;color:#fff;font-size:1.2em}
+    header nav a:hover{color:var(--secondary)}
+    section{padding:2rem}
+    .container{max-width:1200px;margin:0 auto}
+    /* Hero */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    color: #fff;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(3, 19, 37, 0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 2vw, 4rem);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+/* Image Slider */
+.hero-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.hero-slider .slide {
+    min-width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+
+.hero-slider .slide {
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Countdown timer */
+.circular-counter {
+  /* background: #141a2b; */
+  background: #011146;
+  opacity: 0.85;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.circular-counter h2 {
+  color: #8100fe;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.circular-counter h6 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+
+    /* About */
+    .about p{margin-bottom:1rem}
+    blockquote{font-style:italic;color:var(--primary);border-left:4px solid var(--primary);padding-left:1rem;margin-top:1rem}
+    /* CFP */
+    .cfp{background:none;color:#000;border:2px solid #000;padding:2rem;text-align:center;border-radius: 20px;}
+    /* Agenda */
+    .agenda-grid{display:grid;gap:1rem}
+    @media(min-width:768px){.agenda-grid{grid-template-columns:repeat(3,1fr)}}
+    .agenda-item{background:#fff;padding:1rem;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,0.1)}
+    .agenda-item h3{color:var(--primary);margin-bottom:0.5rem;font-size:1.1rem}
+    /* Pricing */
+    .pricing{display:grid;gap:1rem;margin-top:2rem}
+    @media(min-width:768px){.pricing{grid-template-columns:repeat(3,1fr)}}
+    .price-card{background:#fff;padding:2rem;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,0.1);text-align:center;position:relative}
+    .price-card.popular{border:2px solid var(--accent)}
+    .price-card h3{margin-bottom:0.5rem;color:var(--primary)}
+    .price-card p{margin:0.5rem 0 1rem}
+    
+    /* Speakers */
+    .speakers{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-top:2rem}
+    .speaker{text-align:center}
+    .speaker img{width:150px;height:150px;border-radius:50%;object-fit:cover;margin-bottom:0.5rem}
+    .speaker h4{font-size:1rem;color:var(--primary)}
+    /* Past Events */
+    .past-events{display:grid;gap:1rem;margin-top:2rem}
+    @media(min-width:600px){.past-events{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}}
+    .event-card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 4px rgba(0,0,0,0.1)}
+    .event-card img{width:100%;height:150px;object-fit:cover}
+    .event-card .event-body{padding:1rem}
+    .event-card h4{color:var(--primary);margin-bottom:0.5rem}
+  
+    /* Footer */
+    footer{background:var(--dark);color:#fff;text-align:center;padding:2rem 1rem}
+    .social a{margin:0 0.5rem;color:#fff;font-size:1.2rem}
+    /* Carousel container */
+    .about-carousel {display: flex;animation: scroll 20s linear infinite;}
+    /* Individual image container */
+  .about-carousel img {
+  width: 30vw; /* Each image takes up 12% of the viewport width */
+  height: 20vw; border-radius: 2%;
+  object-fit: cover; /* Make sure images cover the entire width */
+  flex-shrink: 0; /* Prevent images from shrinking */
+  margin-right: 1rem; /* Add space between the images */
+}
+
+.about-carousel img:last-child {
+  margin-right: 0; /* Remove margin from the last image */
+}
+
+
+/* Animation to scroll left and then right */
+@keyframes scroll-back-forth {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Apply animation with alternate direction */
+.about-carousel {
+  display: flex;
+  animation: scroll-back-forth linear infinite;
+  animation-direction: alternate; /* Auto reverse at the end */
+  transition: transform 1s ease;
+}
+
+  </style>
+
+</head>
+<body>
+  <header aria-label="Primary">
+   <a href="#hero" style="color:#fff;font-weight:700;font-size:1.1rem">
+  <img src="./Assets/Logo/dmcon2025 logo_white2 copy-1.png" alt="DMCON 2025 Logo" style="width:200px; height: auto;">
+</a>
+
+    <nav aria-label="Main Navigation">
+      <!-- <a href="./explore.html">Explore Kochi</a> -->
+      <a href="./cfp.html">CFP</a>
+      <a href="./sponsor.html">Sponsors</a>
+      <a href="./venue">Venue</a>
+      <a href="https://makemypass.com/event/dmcon2025" class="btn" style="width: 8vw; height: auto; font-size: 1rem; margin-left: 2rem; text-align: center;"> Register</a>
+      <!-- <a href="#past">Past Events</a>
+      <a href="#travel">Travel</a> -->
+    </nav>
+  </header>
+
+  <section id="hero" class="hero" role="banner">
+    <div class="hero-content container">
+        <br><br><br><br><br>
+        <img src="./Assets/Logo/dmcon2025Xdevops logo_white copy.png" style="width: 80%;  height: auto; display: block; margin: 0 auto;">
+        <br><br>
+        <h1>13 September 2025 • Kochi, India</h1>
+        <h1 style="font-size: 50px; font-weight: 400;">#Kerala's Premier DevOps Conference </h1>
+        <br>
+        <a href="https://makemypass.com/event/dmcon2025" class="btn" aria-label="Register for DMCON 2025">REGISTER</a>
+        <a href="./cfp.html" class="btn" aria-label="Sponsors of DMCON 2025">SPONSOR</a>
+        <a href="./cfp.html" class="btn" >CFP</a>
+    </div>
+    <!-- Image Slider -->
+    <div class="hero-slider">
+        <img class="slide" src="./Assets/Past/A98_0853.JPG" alt="Background 1" style="opacity: 45%;">
+        <img class="slide" src="./Assets/Past/A98_0840.JPG" alt="Background 2" style="opacity: 45%;">
+        <img class="slide" src="./Assets/Past/A98_1626.jpg" alt="Background 3" style="opacity: 45%;">
+        <!-- Add more images as needed -->
+    </div>
+
+    
+<!-- Slider Background hero section -->
+<script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.hero-slider .slide');
+    const totalSlides = slides.length;
+
+    function changeSlide() {
+        // Hide all slides
+        slides.forEach(slide => slide.style.display = 'none');
+        
+        // Show the current slide
+        slides[currentIndex].style.display = 'block';
+        
+        // Move to the next slide
+        currentIndex = (currentIndex + 1) % totalSlides;
+    }
+
+    // Set the first slide to be visible
+    changeSlide();
+    
+    // Change slide every 3 seconds
+    setInterval(changeSlide, 3000); // Change every 3 seconds
+</script>
+
+</section>
+
+  <section id="get-ready" class="get-ready" style="color: #fff; border-radius: 2rem;">
+  <div class="container">
+    <div class="get-started" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2rem;">
+      <div class="row counter_wrapper countdown" style="flex: 1; display: flex; justify-content: center; gap: 1rem;">
+        
+        <div class="col-6 col-sm-3">
+          <div class="single-counter circular-counter">
+            <div class="time-section">
+              <h2 id="days">00</h2>
+              <h6>Days</h6>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-sm-3">
+          <div class="single-counter circular-counter">
+            <div class="time-section">
+              <h2 id="hours">00</h2>
+              <h6>Hours</h6>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-sm-3">
+          <div class="single-counter circular-counter">
+            <div class="time-section">
+              <h2 id="minutes">00</h2>
+              <h6>Minutes</h6>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-sm-3">
+          <div class="single-counter circular-counter">
+            <div class="time-section">
+              <h2 id="seconds">00</h2>
+              <h6>Seconds</h6>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<script>
+  // Set the date we're counting down to
+  var countDownDate = new Date("September 13, 2025 09:00:00").getTime();
+
+  // Update the count down every 1 second
+  var x = setInterval(function () {
+
+    // Get today's date and time
+    var now = new Date().getTime();
+
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Output the result in respective elements
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+
+    // If the count down is over, write some text
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("days").innerHTML = "00";
+      document.getElementById("hours").innerHTML = "00";
+      document.getElementById("minutes").innerHTML = "00";
+      document.getElementById("seconds").innerHTML = "00";
+    }
+  }, 1000);
+</script>
+
+  <section id="about" class="about" style="color: #000; ">
+    <div class="container">
+      <p>Join us at DMCON 2025, Kerala’s premier DevOps and cloud native conference, happening in Kochi on September 13, 2025. This community-driven event brings together engineers, architects, and practitioners from across the DevOps and cloud native ecosystem.</p>
+      <p>Be part of the conversation as leading voices, emerging talent, and open source contributors come together for a full day of collaboration, learning, and real-world insights — shaping the future of DevOps in India and beyond.</p>
+      <blockquote>"Shaping the future of DevOps in India and beyond through collaboration, learning, and real-world insights."</blockquote>
+    </div>
+
+<section class="schedule-at-a-glance" style="margin-top: 2rem;">
+  <div class="schedule-header">
+    <h1 style="font-size: 3rem; font-weight: 700;">Schedule At A Glance</h1>
+    <p class="timezone">All times are shown in Indian Standard Time (IST), GMT+5:30</p>
+  </div>
+  <div class="schedule-details">
+    <div class="schedule-item">
+      <div class="schedule-time">9:00 AM</div>
+      <div class="schedule-description">Breakfast + Registration Open</div>
+    </div>
+    <div class="schedule-item">
+      <div class="schedule-time">10:00 AM - 5:00 PM</div>
+      <div class="schedule-description">Keynotes, Breakout Sessions, Code Labs</div>
+    </div>
+    <div class="schedule-item">
+      <div class="schedule-time">5:00 PM</div>
+      <div class="schedule-description">Happy Hour</div>
+    </div>
+  </div>
+  
+  <style>
+    .schedule-at-a-glance {
+  background-color: var(--dark);
+  opacity: 0.85;
+  color: white;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.schedule-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.schedule-header h2 {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.timezone {
+  font-size: 14px;
+  color: #d0f8f8;
+}
+
+.schedule-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.schedule-item {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px;
+  background-color: white;
+  color: #333;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-time {
+  font-size: 18px;
+  font-weight: 500;
+  width: 120px;
+}
+
+.schedule-description {
+  font-size: 16px;
+  font-weight: 400;
+
+display: flex; align-items: center;  flex-grow: 1;
+}
+
+
+  </style>
+</section>
+
+
+
+    <!-- Caraousal Container -->
+  <section style="width: 100%; overflow: hidden; position: relative; text-align: center;">
+  <h1 style="font-size: 3rem; font-weight: 700;">The Onsite Experience</h1>
+
+  <div class="about-carousel">
+    <img src="./Assets/Past/A98_0935.JPG" alt="DMCON 2024">
+    <img src="./Assets/Past/A98_0903.JPG" alt="DMCON 2024">
+    <img src="./Assets/Past/A98_1100.JPG" alt="DMCON 2024">
+    <img src="./Assets/Past/A98_0923.JPG" alt="DMCON 2024">
+  </div>
+</section>
+
+</section>
+
+<script>
+    // JavaScript to handle the auto-scrolling behavior
+    document.addEventListener('DOMContentLoaded', function() {
+        const carousel = document.querySelector('.about-carousel');
+        const totalImages = carousel.children.length;
+        
+        // Adjust the animation duration based on the number of images
+        const duration = (totalImages +2) * 5; // Time in seconds for each full cycle
+
+        carousel.style.animationDuration = `${duration}s`;
+    });
+</script>
+
+
+<!-- Youtube Video Section -->
+
+<section class="video-section" style="width: 100%; overflow: hidden; position: relative; text-align: center;">
+  <div style="display: flex; flex-direction: row; justify-content: center;align-items: center;">
+    <div class="video-header">
+    <h1>2024 Session Recordings</h1>
+    <div class="playlist-button">
+      <a href="https://youtube.com/playlist?list=PLaZCRG_WvL4tqoNi_6PaG0oQdTYpxT0cq&feature=shared" target="_blank">View Entire Playlist</a>
+    </div>
+  </div>
+  <div class="video-preview">
+    <a href="https://www.youtube.com/watch?v=kfmPLtvWRfw" target="_blank">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/kfmPLtvWRfw?si=6Yr5q3-wLrP55Gfb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </a>
+  </div>
+  </div>
+</section>
+
+<style>
+  .video-section {
+    margin-top: 2rem;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .video-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px; /* Adjust as needed */
+    text-align: center;
+  }
+
+  .video-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: black;
+    margin: 0; /* Removes default margin */
+  }
+
+  .playlist-button {
+    margin-top: 10px; /* Adds space between button and title */
+    text-align: center;
+  }
+
+  .playlist-button a {
+    padding: 10px 20px;
+    background-color: var(--secondary);
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+
+  .playlist-button a:hover {
+    background-color: var(--dark);
+    opacity: 0.85;
+    color: white;
+  }
+
+  .video-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  iframe {
+    border-radius: 8px;
+    margin-left: 20%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+</style>
+
+
+<!-- End of Youtube Section -->
+
+  </section>
+
+  <section id="cfp">
+    <div class="container">
+      <div class="cfp" role="region" aria-labelledby="cfp-title">
+        <h2 id="cfp-title">Call for Presentations</h2>
+        <p>Got a breakthrough idea or story? We are looking for speakers ready to ignite the stage. Share your experience and inspire hundreds of DevOps aficionados.</p>
+        <a href="./cfp.html" class="btn" aria-label="Submit your talk" style="font-size: 20px;">Submit Your Talk</a>
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="pricing" style="background: linear-gradient(180deg, #160e3e, #0d0d2a); color: #fff; padding: 3rem 1rem; border-radius: 2rem; margin-top: 1rem;">
+    <div class="container">
+      <h2>Ticket Pricing</h2>
+      <div class="pricing">
+        <div class="price-card popular" aria-label="Early Bird Ticket">
+          <h3>Early Bird</h3>
+          <p><strong>₹3999</strong></p>
+          <p>Limited until 30 June</p>
+          <a href="https://events.devopsmalayalam.io/register" class="btn">Buy Now</a>
+        </div>
+        <div class="price-card" aria-label="Regular Ticket">
+          <h3>Regular</h3>
+          <p><strong>₹4999</strong></p>
+          <p>Until 31 August</p>
+          <a href="https://events.devopsmalayalam.io/register" class="btn">Buy Now</a>
+        </div>
+        <div class="price-card" aria-label="Group Ticket">
+          <h3>Group (5+)</h3>
+          <p><strong>₹4299</strong> / person</p>
+          <p>Save more together</p>
+          <a href="https://events.devopsmalayalam.io/register" class="btn">Buy Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Sponosrship -->
+
+  <section class="sponsor" style="margin-top: 2rem;">
+  <div class="sponsor-header">
+    <h1 style="font-size: 3rem; font-weight: 700;">SPONSORS</h1>
+  </div>
+  <div class="sponsor-details">
+    <div class="sponsor-item">
+      <img src="./Assets/Logo/dmcon2025 logo.png" alt="sponsor1" class="centered-image">
+    </div>
+  </div>
+  <style>
+    .sponsor {
+  background-color: var(--dark);
+  opacity: 0.85;
+  color: white;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.sponsor-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+.sponsor-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sponsor-item {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px;
+  background-color: white;
+  color: #333;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+  .centered-image {
+    max-width: 100%; /* Make sure image is responsive */
+    max-height: 200px; /* Limit the height */
+    object-fit: contain; /* Maintain aspect ratio */
+  }
+  </style>
+</section>
+
+
+  <!-- End of Sponsorship -->
+  <footer>
+    <div class="container">
+      <p class="social" aria-label="Social Links">
+        <a href="https://github.com/devopsmalayalam" aria-label="GitHub">🐙</a>
+        <a href="https://www.linkedin.com/company/devops-malayalam" aria-label="LinkedIn">💼</a>
+        <a href="https://twitter.com/devopsmalayala" aria-label="Twitter">🐦</a>
+      </p>
+      <p>Contact us: <a href="mailto:mod@devopsmalayalam.io" style="color:var(--secondary)">mod@devopsmalayalam.io</a></p>
+      <p>© 2025 DevOps Malayalam • <a href="https://devopsmalayalam.io" style="color:var(--secondary)">devopsmalayalam.io</a></p>
+    </div>
+  </footer>
+
+
+</body>
+</html>
